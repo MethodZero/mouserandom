@@ -62,17 +62,3 @@ function userInterface {
 	convertToNumber -inputarr (extractRandom -cycles $usercycles -bits $userbits) -output $Result
 }
 userInterface
-<# JOURNAL:
-main source of documentation was ss64.com and microsoft docs
-rounding the number size down to a power of two required some thought
-issues with comparing the contents of arrays with -eq, solved by using the Compare-Object function
-progress bar flickered during debugging, fixed by avoiding printing while progress displayed
-why the hell is nothing case-sensitive
-results created with multiplication lost randomness when a wall was hit, and adding products of division resulted in numbers always landing around the same general range, so bitwise xor was used instead
-trying to xor two variables of different uinteger types required a weird solution involving xorring a temporary variable column by column until each bit is accounted for, and then using that instead of the original 
-got stuck with trying to xor the temporary variable in columns, before realizing -bxor didn't reassign the variable, and I had to do it myself
-IT WORKS, AHAHAHAHA
-started adding user-friendliness
-validating user input, problems arising when trying to find out whether a variable is of a numeric data type
-and now it doesn't work
-#>
